@@ -5,12 +5,21 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Document</title>
 </head>
+
+<h1 id="response"></h1>
 <body>
     <script>
         const ajax = new XMLHttpRequest(); // method ajax untuk httprequest
         ajax.open('GET', 'api/hello.json'); // untuk request ke api endpoint 
-        ajax.open('GET', 'https://cungpret.com/api/v1/check-health'); // untuk request ke api endpoint 
+        // ajax.open('GET', 'https://cungpret.com/api/v1/check-health'); // untuk request ke api endpoint 
 
+        ajax.addEventListener("load", function () { // onload callback get response
+            const json = JSON.parse(ajax.responseText); // parsing response
+
+            const response = document.getElementById("response"); // get id h1
+            response.textContent = json.response; // masukan response ke value h1
+            document.body.appendChild(response); // muncul kan value di h1
+        });
         ajax.send();
     </script>
 </body>
