@@ -50,9 +50,19 @@ contoh di file :
 - `https://developer.mozilla.org/en-US/docs/Web/API/XMLHttpRequest/load_event`
 - Dan untuk mengambil datanya dari server, kita bisa menggunakan property responseText
 
-
 contoh di file :
 - `ajax.html`
 
+# Response Status di AJAX
+## Response Status di AJAX
+- AJAX adalah proses komunikasi Client dan Server
+- Dalam komunikasi Client dan Server, kita tidak bisa selalu menganggap proses tersebut akan berjalan lancar.
+- Akan ada banyak hal-hal yang bisa mengganggu proses AJAX yang bisa menyebabkan error, seperti; koneksi internet bermasalah, error dari server, data dari client tidak valid, dan lain-lain.
+- Server biasanya akan mengirimkan HTTP Status Code yang sesuai dengan jenis response nya, seperti yang sudah dibahas di materi HTTP
+- Untuk mengetahui status response dari Server, kita bisa menggunakan property status
+- `https://developer.mozilla.org/en-US/docs/Web/API/XMLHttpRequest/status`
+
+contoh di file :
+- `ajax-status.html`
 
 
