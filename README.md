@@ -13,5 +13,17 @@
 - Proses Asynchronous juga biasa disebut Non-Blocking.
 
 
+# Callback
+## Apa itu Callback?
+- Callback, merupakan mekanisme untuk memanggil kembali kode yang ada di program dari proses Async
+- Callback biasanya dibuat dalam bentuk function as parameter, dan parameter function tersebut akan dieksekusi saat proses Async selesai
+- Dengan menggunakan Callback, program bisa menerima informasi yang dibutuhkan dari proses yang berjalan secara Async
+
+## Async Method
+- Ada banyak method Async yang terdapat di JavaScript, yang akan kita bahas kali ini adalah :
+- setTimeout(callback, timeInMilis), digunakan untuk menjalankan proses Async sekali dalam waktu tertentu.
+- setInterval(callback, timeInMilis), digunakan untuk menjalankan proses Async secara periodik dalam waktu tertentu.
 
 
+contoh di file :
+- `callback.html`
