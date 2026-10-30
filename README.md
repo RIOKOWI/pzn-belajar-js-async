@@ -27,3 +27,15 @@
 
 contoh di file :
 - `callback.html`
+- `set-interval.html`
+
+# AJAX
+## Apa itu AJAX?
+- AJAX singkatan dari Asynchronous JavaScript and XML
+- AJAX biasanya digunakan untuk mengambil atau mengirim data ke URL lain
+- Untuk membuat AJAX, kita bisa menggunakan class XMLHttpRequest
+- `https://developer.mozilla.org/en-US/docs/Web/API/XMLHttpRequest`
+
+
+contoh di file :
+- `callback.html`
