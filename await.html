@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        function getProduct(){ // create func for fetch api
+            return fetch("api/product.json", { // fetch base url
+                method: "GET" // using get method
+            }).then((response) => response.json()); // convert response to json
+        }
+
+        async function getProductName() { // create async func for await
+            const response = await getProduct(); // call func getProdct using await
+            return response.item; // retun get value from string item
+        }
+
+        getProductName() // call async func
+            .then((itemName) => console.info(itemName)); // response console info
+    </script>
+</body>
+</html>

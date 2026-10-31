@@ -223,5 +223,11 @@ contoh di file :
 - Async digunakan untuk menandakan bahwa Function tersebut adalah Async, dan mengembalikan Promise
 - Dengan menggunakan Async, kita tidak perlu membuat Promise secara manual lagi
 
+## Await
+- Await digunakan untuk mendapatkan value hasil dari Promise
+- Await hanya bisa digunakan dalam Async Function
+
+
 contoh di file :
 - `async.html`
+- `await.html`
