@@ -165,4 +165,5 @@ contoh di file :
 *note : promise dibuat untuk mengatasi callback hell
 
 contoh di file :
-- `send-file.html`
+- `promise.html`
+- `api/product.json`

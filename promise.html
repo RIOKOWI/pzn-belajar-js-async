@@ -10,14 +10,31 @@
 
 
     <script>
-        const promise = new Promise(function(resolve, reject) { // membuat promise dan 2 parameter = fulfilled & rejected
-            if(success){ // jika berhasil get data
-                resolve(value); // kirim dengan value datanya
-            } else{ // jika tidak berhasil
-                reject(error) // kirim pesan errornya
-            }
-        });
-        
+        // const promise = new Promise(function(resolve, reject) { // membuat promise dan 2 parameter = fulfilled & rejected
+        //     if(success){ // jika berhasil get data
+        //         resolve(value); // kirim dengan value datanya
+        //     } else{ // jika tidak berhasil
+        //         reject(error) // kirim pesan errornya
+        //     }
+        // });
+
+        function getProduct() { // buat func
+            return new Promise( function(resolve, reject) { // buat promise (success, error)
+                const ajax = new XMLHttpRequest(); // call ajaax method http request
+                ajax.open("GET", "api/product.json") // call get data
+                ajax.onload = function () { // callback
+                    if(ajax.status == 200){ 
+                        resolve(JSON.parse(ajax.responseText)); // jika resolve tampilkan datanya
+                    } else {
+                        reject(ajax.responseText); // jika error tampilkan pesan error
+                    }
+                }
+                ajax.send(); // hit endpoint
+            })
+        }
+
+        getProduct(); // jalankan function
+        console.info(getProduct()); // debugging
     </script>
 </body>
 </html>
