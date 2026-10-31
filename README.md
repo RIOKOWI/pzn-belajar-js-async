@@ -176,7 +176,19 @@ contoh di file :
 - finally() akan dieksekusi ketika terjadi sukses atau gagal pada Promise
 - `https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Promise#instance_methods`
 
+## Promise Static Method
+- Promise juga memiliki beberapa static method
+- Promise.all() digunakan untuk mengeksekusi beberapa promise sekaligus dan menunggu semua hasil promise nya
+- Promise.any() digunakan untuk mengeksekusi beberapa promise sekaligus dan mengambil hasil promise paling cepat
+- Dan lain-lain
+- `https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Promise#static_methods`
+
+
 
 
 contoh di file :
 - `promise.html`
+- `promise-static.html`
+- `api/product1.json`
+- `api/product2.json`
+- `api/product3.json`

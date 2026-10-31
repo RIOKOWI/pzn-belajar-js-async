@@ -31,10 +31,10 @@
         //     }
         // });
 
-        function getProduct() { // buat func
+        function getProduct(product) { // buat func
             return new Promise( function(resolve, reject) { // buat promise (success, error)
                 const ajax = new XMLHttpRequest(); // call ajaax method http request
-                ajax.open("GET", "api/product.json") // call get data
+                ajax.open("GET", `api/${product}.json`) // call get data
                 ajax.onload = function () { // callback
                     if(ajax.status == 200){ 
                         resolve(ajax.responseText); // jika resolve tampilkan datanya
@@ -61,7 +61,9 @@
                 document.getElementById("name").textContent = error; // show error
                 document.getElementById("price").textContent = error;// show error
             })
-            .finally(console.info("kelar"));
+            .finally( // gagal & sukses tetap di execute
+                console.info("kelar")
+            ); 
             
         console.info(getProduct()); // debugging
     </script>
