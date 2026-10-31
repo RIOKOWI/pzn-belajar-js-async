@@ -159,7 +159,10 @@ contoh di file :
 
 ## Promise State
 | state | pending | fulfilled | rejected |
+| --- | --- | --- | --- |
 | result | undefined | value | error |
+
+*note : promise dibuat untuk mengatasi callback hell
 
 contoh di file :
 - `send-file.html`
