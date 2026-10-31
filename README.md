@@ -205,5 +205,11 @@ contoh di file :
 - Dan saat membuat Request, kita bisa menentukan data yang ingin kita kirim
 - `https://developer.mozilla.org/en-US/docs/Web/API/Request/Request`
 
+## Response
+- Hasil dari Fetch API adalah sebuah Promise
+- Promise tersebut berisikan object Response
+- Ada banyak property dan method pada object Response, kita bisa menggunakannya sesuai dengan yang kita butuhkan
+- `https://developer.mozilla.org/en-US/docs/Web/API/Response`
+
 contoh di file :
 - `fetch-api.html`
