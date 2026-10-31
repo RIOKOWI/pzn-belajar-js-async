@@ -227,6 +227,11 @@ contoh di file :
 - Await digunakan untuk mendapatkan value hasil dari Promise
 - Await hanya bisa digunakan dalam Async Function
 
+## Error Handler di Async Await
+- Saat kita menggunakan Promise, kita bisa menggunakan catch() ketika terjadi error
+- Bagaimana pada kasus Async Await?
+- Pada Async Await, kita bisa menggunakan try catch untuk melakukan penanganan error
+
 
 contoh di file :
 - `async.html`

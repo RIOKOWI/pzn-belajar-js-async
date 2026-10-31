@@ -14,8 +14,15 @@
         }
 
         async function getProductName() { // create async func for await
-            const response = await getProduct(); // call func getProdct using await
-            return response.item; // retun get value from string item
+            
+            try { 
+                const response = await getProduct(); // call func getProdct using await
+                return response.item; // retun get value from string item
+            } catch (e) { // error handling
+                return "Unavailable/Error"
+            } finally {
+                console.info("finally");
+            }
         }
 
         getProductName() // call async func
