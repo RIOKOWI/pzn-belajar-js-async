@@ -66,3 +66,25 @@ contoh di file :
 - `ajax-status.html`
 
 
+# State di AJAX
+## State di AJAX
+- AJAX memiliki tahapan state, dimana kita bisa mendapatkan banyak sekali state di Ajax menggunakan property readyState
+- Property readyState mengembalikan nilai number, dimana tiap number merupakan representasi dari statenya
+
+## Daftar State AJAX
+
+| Value | State              | Description                                                     |
+| ----- | ------------------ | --------------------------------------------------------------- |
+| 0     | `UNSENT`           | Client has been created. `open()` not called yet.               |
+| 1     | `OPENED`           | `open()` has been called.                                       |
+| 2     | `HEADERS_RECEIVED` | `send()` has been called, and headers and status are available. |
+| 3     | `LOADING`          | Downloading; `responseText` holds partial data.                 |
+| 4     | `DONE`             | The operation is complete.                                      |
+
+## Ready State Change Event
+- Jika kita ingin mendengarkan perubahan yang terjadi pada state, kita bisa menggunakan event readystatechange
+- `https://developer.mozilla.org/en-US/docs/Web/API/XMLHttpRequest/onreadystatechange`
+
+
+contoh di file :
+- `ajax-status.html`

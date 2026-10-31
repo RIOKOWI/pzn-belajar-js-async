@@ -15,6 +15,10 @@
         }
 
         const ajax = new XMLHttpRequest(); // method ajax untuk httprequest
+
+        ajax.onreadystatechange = function () {
+            console.info(`Ajax info ${ajax.readyState}`); // state 0 failed karna endpoint tidak valid
+        }
         ajax.open('GET', 'api/hell.json'); // untuk request ke api endpoint 
         // ajax.open('GET', 'https://cungpret.com/api/v1/check-health'); // untuk request ke api endpoint 
 
