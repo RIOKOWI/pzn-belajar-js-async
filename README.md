@@ -149,3 +149,17 @@ contoh di file :
 
 contoh di file :
 - `send-file.html`
+
+# Promise
+## Promise
+- Promise merupakan proxy untuk sebuah nilai di masa depan (Future) yang belum diketahui saat pembuatan Promise tersebut.
+- Biasa Promise digunakan sebagai proxy untuk proses Async.
+- Penggunaan Promise sangat mudah, dan lebih mirip dengan kode Synchronous.
+- `https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Promise`
+
+## Promise State
+| state | pending | fulfilled | rejected |
+| result | undefined | value | error |
+
+contoh di file :
+- `send-file.html`
