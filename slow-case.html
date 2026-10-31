@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <button id="buttonTask">Click Me</button>
+    <script>
+        function slowLog(total) { // func untuk perulangan
+            for (let i = 0; i < total; i++) {
+                console.info(i);
+            }   
+        }
+
+        // study case tanpa menggunakan web worker yang berjalan secara concurent atau synchronous (1 thread)
+        document.getElementById("buttonTask").onclick = function(){
+            console.info("Header");
+            slowLog(25000);
+            console.info("Footer");
+        }
+    </script>
+    
+</body>
+</html>
