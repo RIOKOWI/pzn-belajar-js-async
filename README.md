@@ -243,3 +243,22 @@ contoh di file :
 - Kemampuan menjalankan beberapa Thread untuk mengelola satu atau lebih pekerjaan, dinamakan Paralel. 
 - Dan untuk membuat proses secara Paralel, kita bisa menggunakan Web Worker
 
+## Web Worker
+- Web Worker adalah kemampuan yang untuk menjalankan proses di Thread yang berbeda dibanding Main Thread. 
+- Keuntungan menggunakan Web Worker adalah, jika terdapat proses yang membutuhkan waktu lama, Web kita tidak akan Freeze, karena proses tersebut bisa kita jalankan di Thread yang berbeda dari Main Thread (yang biasa digunakan oleh UI)
+- `https://developer.mozilla.org/en-US/docs/Web/API/Web_Workers_API`
+
+## Worker
+- Untuk menggunakan Web Worker API, kita bisa membuat object Worker
+- `https://developer.mozilla.org/en-US/docs/Web/API/Worker`
+- Saat kita membuat object Worker, Worker tidak akan secara otomatis berjalan, melainkan kita perlu memberi perintah dengan cara mengirim pesan
+- Untuk mengirim pesan, kita bisa gunakan method postMessage()
+- Sedangkan untuk menerima balasan dari worker, kita bisa menggunakan event listener onmessage
+- Data yang diterima adalah object MessageEvent
+- `https://developer.mozilla.org/en-US/docs/Web/API/MessageEvent`
+
+
+contoh di file :
+- `slow-case.html`
+- `web-worker.html`
+- `scripts/worker.js`

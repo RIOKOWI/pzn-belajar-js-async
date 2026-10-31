@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <button id="buttonTask">Click Me</button>
+    <script>
+        const worker = new Worker("scripts/worker.js"); // membuat worker atau thread baru
+        worker.addEventListener("message", function (message) {
+            console.info(message.data); // menerima data dari worker
+        });
+        
+        document.getElementById("buttonTask").onclick = function(){
+            worker.postMessage(100000); // kirim parameter ke worker untuk di eksekusi
+        }
+
+        // intinya kalo ada proses berat akan di lempar ke thread/tab lain agar web tidak force close atau keberatan
+    </script>
+    
+</body>
+</html>
