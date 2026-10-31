@@ -17,9 +17,25 @@
         <br>
         <input type="button" id="login" value="Login">
     </form>
-    
+    <h1 id="response"></h1>
     <script>
+        function doLogin() {
+            const ajax = new XMLHttpRequest(); // call ajax method http request
+            ajax.open("POST", "https://testjs.free.beeceptor.com"); // ("METHOD", "ENDPOINT");
+            ajax.onload = function () { // function for showing response endpoint api
+                const response = document.getElementById("response"); // get id element h1
+                response.innerText = ajax.responseText; // masukan response ke element h1
+            }
+            ajax.setRequestHeader("Content-Type", "application/json"); // setting request header
 
+            const json = {
+                username: document.getElementById("username").value, // send json value username parameter
+                password: document.getElementById("password").value // send json value password parameter
+            }
+            ajax.send(JSON.stringify(json)); // ubah ke json stringify lalu kirim request
+        }
+
+        document.getElementById("login").onclick = doLogin; // ketika user click button login function doLogin akan di panggil
     </script>
 </body>
 </html>
