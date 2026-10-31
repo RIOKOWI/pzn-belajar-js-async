@@ -213,3 +213,15 @@ contoh di file :
 
 contoh di file :
 - `fetch-api.html`
+
+# Async Await
+## Async Await
+- Async Await adalah fitur di JavaScript yang digunakan untuk mempermudah proses pembuatan kode Promise.
+- Dengan menggunakan Async Await, kita bisa membuat kode Asynchronous dengan gaya Synchronous
+
+## Async
+- Async digunakan untuk menandakan bahwa Function tersebut adalah Async, dan mengembalikan Promise
+- Dengan menggunakan Async, kita tidak perlu membuat Promise secara manual lagi
+
+contoh di file :
+- `async.html`
