@@ -183,12 +183,27 @@ contoh di file :
 - Dan lain-lain
 - `https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Promise#static_methods`
 
-
-
-
 contoh di file :
 - `promise.html`
 - `promise-static.html`
 - `api/product1.json`
 - `api/product2.json`
 - `api/product3.json`
+
+# Fetch API
+## Fetch API
+- Fetch API merupakan fitur baru sebagai alternatif AJAX
+- Saat menggunakan AJAX, kita perlu menggunakan Callback untuk menerima response atau data dari Server, sedangkan Fetch API sudah menggunakan Promise, sehingga penggunaan Fetch API lebih mudah dibandingkan AJAX
+- Hampir semua browser modern sekarang sudah mendukung menggunakan Fetch API
+- Apa yang bisa kita lakukan di AJAX, bisa juga kita lakukan di Fetch API
+- `https://developer.mozilla.org/en-US/docs/Web/API/Fetch_API`
+
+## Request
+- Saat kita akan mengirim request menggunakan Fetch API, kita perlu membuat object Request
+- Hal ini menjadi lebih rapi dibandingkan menggunakan AJAX
+- Kita bisa membuat object Request, lalu dikirim menggunakan Fetch API
+- Dan saat membuat Request, kita bisa menentukan data yang ingin kita kirim
+- `https://developer.mozilla.org/en-US/docs/Web/API/Request/Request`
+
+contoh di file :
+- `fetch-api.html`
