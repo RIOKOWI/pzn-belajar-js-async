@@ -103,3 +103,6 @@ contoh di file :
 - `https://pipedream.com/requestbin`
 - `https://beeceptor.com/`
 
+# Error CORS
+enable CORS
+- `https://chrome.google.com/webstore/detail/allow-cors-access-control/lhobafahddgcelffkeicbaginigeejlf`
