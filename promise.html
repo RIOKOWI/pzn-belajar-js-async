@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+<table>
+    <tr>
+        <td>Id : </td>
+        <td id="id"></td>
+    </tr>
+    <tr>
+        <td>Name : </td>
+        <td id="name"></td>
+    </tr>
+    <tr>
+        <td>Price : </td>
+        <td id="price"></td>
+    </tr>
+</table>
+
+
+    <script>
+        // const promise = new Promise(function(resolve, reject) { // membuat promise dan 2 parameter = fulfilled & rejected
+        //     if(success){ // jika berhasil get data
+        //         resolve(value); // kirim dengan value datanya
+        //     } else{ // jika tidak berhasil
+        //         reject(error) // kirim pesan errornya
+        //     }
+        // });
+
+        function getProduct(product) { // buat func
+            return new Promise( function(resolve, reject) { // buat promise (success, error)
+                const ajax = new XMLHttpRequest(); // call ajaax method http request
+                ajax.open("GET", `api/${product}.json`) // call get data
+                ajax.onload = function () { // callback
+                    if(ajax.status == 200){ 
+                        resolve(ajax.responseText); // jika resolve tampilkan datanya
+                    } else {
+                        reject(ajax.status); // jika error tampilkan pesan error
+                    }
+                }
+                ajax.send(); // hit endpoint
+            })
+        }
+
+        // promise method
+        getProduct() // jalankan function
+            .then(function(response) {
+                return JSON.parse(response); // parsing json
+            })
+            .then(function(json) {
+                document.getElementById("id").textContent = json.id; // show each data
+                document.getElementById("name").textContent = json.item; // show each data
+                document.getElementById("price").textContent = json.value;// show each data
+            })
+            .catch(function(error){
+                document.getElementById("id").textContent = error; // show error
+                document.getElementById("name").textContent = error; // show error
+                document.getElementById("price").textContent = error;// show error
+            })
+            .finally( // gagal & sukses tetap di execute
+                console.info("kelar")
+            ); 
+            
+        console.info(getProduct()); // debugging
+    </script>
+</body>
+</html>

@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <form >
+        <label for="username">Username :
+            <input type="text" id="username" name="username">
+        </label>
+        <br>
+        <label for="password">Password : 
+            <input type="password" id="password" name="password">
+        </label>
+        <br>
+        <input type="button" id="login" value="Login">
+    </form>
+    <h1 id="response"></h1>
+    <script>
+        
+        function doLogin(){
+            const request = new Request("https://testjs.free.beeceptor.com/", { // membuat request dengan base url
+                method: "POST",
+                headers: { // setup headers
+                    "Content-Type": "application/json",
+                    "Accept": "application/json"
+                },
+                body: JSON.stringify({ // set request
+                    username: document.getElementById("username").value, // get username value
+                    password: document.getElementById("password").value // get password value
+                })
+            });
+            
+            const response = fetch(request); // send request
+
+            response
+                .then((response) => response.json()) // ubah ke json
+                .then(function (json) {
+                    document.getElementById("response").textContent = json.success;
+                })
+                .catch(function (error) {
+                    document.getElementById("response").textContent = error;
+                })
+
+        }
+
+        document.getElementById("login").onclick = doLogin; // trigger function ketika klik login
+
+
+    </script>
+</body>
+</html>

@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <h1 id="header"></h1>
+    <script>
+        function setTime() { // bikin func async
+            const header = document.getElementById("header"); // get id header
+            
+            header.textContent = new Date().toString(); // masukan date dalam bentuk string ke element header
+
+            document.body.appendChild(header); // masukan date ke element body id header
+        };
+
+        setInterval(setTime, 1000); // di eksekusi setiap 1 detik sekali yang artinya date akan di perbarui setiap 1 detik sekali
+    </script>
+</body>
+</html>

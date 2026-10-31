@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        const addElement = () => { // membuat async
+            const header = document.createElement("h1"); // create element h1
+            header.textContent = "Rio Achyar"; // add value ke element h1
+
+            document.body.appendChild(header); // tambahkan h1 ke body
+        };
+
+        // gini juga boleh
+        // function addElement() {
+        //     const header = document.createElement("h1");
+        //     header.textContent = "Rio Achyar"; 
+
+        //     document.body.appendChild(header); 
+        // }
+
+        setTimeout(addElement, 5000); // (callback, milisecond)
+        // artinya element akan muncul 5 detik setelah page di buka
+    </script>
+</body>
+</html>

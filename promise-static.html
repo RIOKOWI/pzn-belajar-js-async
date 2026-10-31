@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+<table>
+    <tr>
+        <td>Id : </td>
+        <td id="id"></td>
+    </tr>
+    <tr>
+        <td>Name : </td>
+        <td id="name"></td>
+    </tr>
+    <tr>
+        <td>Price : </td>
+        <td id="price"></td>
+    </tr>
+</table>
+
+
+    <script>
+        function getProduct(product) { // buat func
+            return new Promise( function(resolve, reject) { // buat promise (success, error)
+                const ajax = new XMLHttpRequest(); // call ajaax method http request
+                ajax.open("GET", `api/${product}.json`) // call get data
+                ajax.onload = function () { // callback
+                    if(ajax.status == 200){ 
+                        resolve(ajax.responseText); // jika resolve tampilkan datanya
+                    } else {
+                        reject(ajax.status); // jika error tampilkan pesan error
+                    }
+                }
+                ajax.send(); // hit endpoint
+            })
+        }
+
+        const promise = Promise.all([ // .any untuk get data yang paling cepat
+            getProduct("product1"),
+            getProduct("product2"),
+            getProduct("product3"),
+        ]);
+
+        promise.then( function(products) {
+            console.info(products);
+        });
+            
+
+    </script>
+</body>
+</html>

@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <form >
+        <label for="search">Search :
+            <input type="text" id="search" name="search">
+        </label>
+        <br>
+        <input type="button" id="searchButton" value="search">
+    </form>
+    <h1 id="response"></h1>
+    <script>
+        
+
+        function doSearch() {
+            const ajax = new XMLHttpRequest(); // call ajax method http request
+            const param = new URLSearchParams(); // call ajax method search query param
+            param.append("search", document.getElementById("search").value); // memasukan value search ke url parameter
+            param.append("filter", document.getElementById("search").value); 
+            // contoh di url param otomatis = ?search=xxxxx?filter=yyyyy
+
+            ajax.open("GET", `https://testjs.free.beeceptor.com?${param.toString()}`); // ("METHOD", "ENDPOINT");
+
+            ajax.onload = function () { // function for showing response endpoint api
+                const response = document.getElementById("response"); // get id element h1
+                response.innerText = ajax.responseText; // masukan response ke element h1
+            }
+
+            ajax.send();
+        }
+
+        document.getElementById("searchButton").onclick = doSearch; // ketika user click button search function doSearch akan di panggil
+    </script>
+</body>
+</html>

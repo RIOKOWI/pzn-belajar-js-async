@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<h1 id="response"></h1>
+<body>
+    <script>
+        function displayResponse(json){
+            const response = document.getElementById("response"); // get id h1
+            response.textContent = json.response; // masukan response ke value h1
+        }
+
+        const ajax = new XMLHttpRequest(); // method ajax untuk httprequest
+
+        ajax.onreadystatechange = function () {
+            console.info(`Ajax info ${ajax.readyState}`); // state 0 failed karna endpoint tidak valid
+        }
+        ajax.open('GET', 'api/hell.json'); // untuk request ke api endpoint 
+        // ajax.open('GET', 'https://cungpret.com/api/v1/check-health'); // untuk request ke api endpoint 
+
+        ajax.addEventListener("load", function () { // onload callback get response
+            if(ajax.status == 200){
+                const json = JSON.parse(ajax.responseText)
+                displayResponse(json);
+            } else {
+                displayResponse({
+                    response: `error coy ${ajax.status}`
+                })
+            }
+        });
+
+        
+        ajax.send();
+    </script>
+</body>
+</html>
